@@ -52,14 +52,6 @@ class ImageRetrieverService
         foreach ($imageTypes as $imageType) {
             $sources = [];
 
-            $originalFileName = $idImage . $extension;
-
-            // Get path of original uploaded image we will use to get thumbnails
-            $originalImagePath = implode(DIRECTORY_SEPARATOR, [
-                $imageFolderPath,
-                $originalFileName,
-            ]);
-
             foreach ($configuredImageFormats as $imageFormat) {
                 // Generate the thumbnail
                 $this->checkOrGenerateImageType($originalImagePath, $imageFolderPath, $idImage, $imageType, $imageFormat);
