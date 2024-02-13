@@ -1,0 +1,22 @@
+{
+  "name": "aeyoll/image_retriever",
+  "description": "Image Retriever for PrestaShop",
+  "license": "MIT",
+  "require": {
+    "php": ">=8.1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "PrestaShop\\Module\\ImageRetriever\\": "src/"
+    },
+    "exclude-from-classmap": []
+  },
+  "config": {
+    "preferred-install": "dist",
+    "prepend-autoloader": false
+  },
+  "type": "prestashop-module",
+  "authors": [{
+    "name": "Jean-Philippe Bidegain"
+  }]
+}
