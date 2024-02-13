@@ -2,6 +2,15 @@
 
 namespace PrestaShop\Module\ImageRetriever\Service;
 
+use Context;
+use ImageManager;
+use ImageType;
+use PrestaShop\PrestaShop\Adapter\Image\ImageRetriever;
+use PrestaShop\PrestaShop\Adapter\ServiceLocator;
+use PrestaShop\PrestaShop\Core\FeatureFlag\FeatureFlagSettings;
+use PrestaShopDatabaseException;
+use Tools;
+
 class ImageRetrieverService
 {
     /**
