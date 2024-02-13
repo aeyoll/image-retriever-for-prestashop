@@ -42,7 +42,7 @@ class ImageRetrieverService
             ]
         );
 
-        $imageFolderUrl = str_replace(_PS_ROOT_DIR, '', $imageFolderPath);
+        $imageFolderUrl = str_replace(_PS_ROOT_DIR_, '', $imageFolderPath);
 
         $configuredImageFormats = ServiceLocator::get(ImageFormatConfiguration::class)->getGenerationFormats();
         $rewrite = $idImage;
