@@ -8,6 +8,7 @@ use ImageType;
 use PrestaShop\PrestaShop\Adapter\Image\ImageRetriever;
 use PrestaShop\PrestaShop\Adapter\ServiceLocator;
 use PrestaShop\PrestaShop\Core\FeatureFlag\FeatureFlagSettings;
+use PrestaShop\PrestaShop\Core\Image\ImageFormatConfiguration;
 use PrestaShopDatabaseException;
 use Tools;
 
