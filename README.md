@@ -46,5 +46,26 @@ Let's assume you have an image file in a module, located at `modules/your_module
 use PrestaShop\Module\ImageRetriever\Service\ImageRetrieverService;
 
 $irs = new ImageRetrieverService();
-$irs->getImage(_PS_MODULE_DIR_ . '/your_module/img/', 'test.jpg');
+$image = $irs->getImage(_PS_MODULE_DIR_ . 'your_module/img/', 'test.jpg');
 ```
+
+In your template:
+
+```tpl
+<picture class="picture-image">
+    {if !empty($image.bySize.home_default.sources.avif)}
+        <source srcset="{$image.bySize.home_default.sources.avif}" type="image/avif">
+    {/if}
+
+    {if !empty($image.bySize.home_default.sources.webp)}
+        <source srcset="{$image.bySize.home_default.sources.webp}" type="image/webp">
+    {/if}
+
+    <img
+        class="img-fluid"
+        src="{$image.bySize.home_default.url}"
+        alt=""
+        width="{$image.bySize.home_default.width}}"
+        height="{$image.bySize.home_default.height}">
+</picture>
+
