@@ -32,7 +32,7 @@ class Image_Retriever extends Module
         $this->displayName = $this->trans('Image retriever', [], 'Modules.ImageRetriever.Admin');
         $this->description = $this->trans('Image retriever for PrestaShop', [], 'Modules.ImageRetriever.Admin');
 
-        $this->ps_versions_compliancy = ['min' => '8.1.0.0', 'max' => _PS_VERSION_];
+        $this->ps_versions_compliancy = ['min' => '8.0.0.0', 'max' => _PS_VERSION_];
 
         $this->errors = array();
     }
