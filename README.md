@@ -18,23 +18,6 @@ For PrestaShop 8.0+, require the plugin with Composer using the following comman
 composer require aeyoll/image_retriever
 ```
 
-```json
-{
-    "name": "project-name/project-name",
-    "require": {
-        "aeyoll/image_retriever": "dev-main",
-        "composer/installers": "^1.0.21"
-    },
-    "config": {
-        "allow-plugins": {
-            "composer/installers": true
-        },
-        "sort-packages": true
-    },
-    "minimum-stability": "dev"
-}
-```
-
 Usage
 ---
 
