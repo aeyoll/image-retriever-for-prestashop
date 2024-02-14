@@ -39,7 +39,7 @@ $image = $irs->getImage(
 In your template:
 
 ```tpl
-<picture class="picture-image">
+<picture>
     {if !empty($image.bySize.home_default.sources.avif)}
         <source srcset="{$image.bySize.home_default.sources.avif}" type="image/avif">
     {/if}
