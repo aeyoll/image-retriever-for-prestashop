@@ -3,12 +3,10 @@
 namespace PrestaShop\Module\ImageRetriever\Service;
 
 use Context;
+use FeatureFlag;
 use ImageManager;
 use ImageType;
-use PrestaShop\PrestaShop\Adapter\Image\ImageRetriever;
-use PrestaShop\PrestaShop\Adapter\ServiceLocator;
 use PrestaShop\PrestaShop\Core\FeatureFlag\FeatureFlagSettings;
-use PrestaShop\PrestaShop\Core\Image\ImageFormatConfiguration;
 use PrestaShopDatabaseException;
 use Tools;
 
@@ -44,7 +42,14 @@ class ImageRetrieverService
 
         $imageFolderUrl = str_replace(_PS_ROOT_DIR_, '', $imageFolderPath);
 
-        $configuredImageFormats = ServiceLocator::get(ImageFormatConfiguration::class)->getGenerationFormats();
+        $isMultipleImageFormatFeatureActive = FeatureFlag::isEnabled(FeatureFlagSettings::FEATURE_FLAG_MULTIPLE_IMAGE_FORMAT);
+
+        if ($isMultipleImageFormatFeatureActive) {
+            $configuredImageFormats = explode(',', Configuration::get('PS_IMAGE_FORMAT'));
+        } else {
+            $configuredImageFormats = ['jpg'];
+        }
+
         $rewrite = $idImage;
 
         // Check and generate each thumbnail size
