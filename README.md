@@ -69,7 +69,7 @@ In your template:
         class="img-fluid"
         src="{$image.bySize.home_default.url}"
         alt=""
-        width="{$image.bySize.home_default.width}}"
+        width="{$image.bySize.home_default.width}"
         height="{$image.bySize.home_default.height}">
 </picture>
 
