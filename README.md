@@ -5,14 +5,14 @@ This module helps you generate thumbnails and webp/avif alternatives for images 
 Requirements
 ---
 
-PHP 8.1+ is needed to use this module.
+PHP 7.1+ is needed to use this module.
 
 Installation
 ---
 
-### PrestaShop 8.1+
+### PrestaShop 8.0+
 
-For PrestaShop 8.1+, require the plugin with Composer using the following command:
+For PrestaShop 8.0+, require the plugin with Composer using the following command:
 
 ```sh
 composer require aeyoll/image_retriever
