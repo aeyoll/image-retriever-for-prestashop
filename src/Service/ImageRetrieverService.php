@@ -13,14 +13,15 @@ use Tools;
 class ImageRetrieverService
 {
     /**
-     * @param string $imageFolderPath   The absolute path to the image are stored
+     * @param string $imageFolderPath   The absolute path where the images are stored
      * @param int|string $idImage       Identifier of the image
+     * @param array $onlyTypes          An array containing image types to generate. If empty, every types are generated
      *
      * @return array
      *
      * @throws PrestaShopDatabaseException
      */
-    public function getImage(string $imageFolderPath, int|string $idImage): array
+    public function getImage(string $imageFolderPath, int|string $idImage, array $onlyTypes = []): array
     {
         $urls = [];
 
@@ -55,6 +56,10 @@ class ImageRetrieverService
         // Check and generate each thumbnail size
         $imageTypes = ImageType::getImagesTypes(null, true);
         foreach ($imageTypes as $imageType) {
+            if (!empty($onlyTypes) || !in_array($image_type['name'], $onlyTypes)) {
+                continue;
+            }
+
             $sources = [];
 
             foreach ($configuredImageFormats as $imageFormat) {
