@@ -46,7 +46,11 @@ Let's assume you have an image file in a module, located at `modules/your_module
 use PrestaShop\Module\ImageRetriever\Service\ImageRetrieverService;
 
 $irs = new ImageRetrieverService();
-$image = $irs->getImage(_PS_MODULE_DIR_ . 'your_module/img/', 'test.jpg');
+$image = $irs->getImage(
+    _PS_MODULE_DIR_ . 'your_module/img/', // The absolute path to the uploaded images folder
+    'test.jpg', // The image filename
+    ['home_default'] // Optional: generate only specific image types, otherwise generate every format
+);
 ```
 
 In your template:
