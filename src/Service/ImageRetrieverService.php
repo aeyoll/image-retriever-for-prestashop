@@ -56,8 +56,9 @@ class ImageRetrieverService
 
         // Check and generate each thumbnail size
         $imageTypes = ImageType::getImagesTypes(null, true);
+
         foreach ($imageTypes as $imageType) {
-            if (!empty($onlyTypes) || !in_array($image_type['name'], $onlyTypes)) {
+            if (!empty($onlyTypes) && !in_array($imageType['name'], $onlyTypes)) {
                 continue;
             }
 
