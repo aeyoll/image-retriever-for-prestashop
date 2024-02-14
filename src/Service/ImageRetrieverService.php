@@ -3,6 +3,7 @@
 namespace PrestaShop\Module\ImageRetriever\Service;
 
 use Context;
+use Configuration;
 use FeatureFlag;
 use ImageManager;
 use ImageType;
