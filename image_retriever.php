@@ -20,7 +20,7 @@ class Image_Retriever extends Module
 {
     public function __construct()
     {
-        $this->name = 'image_retriver';
+        $this->name = 'image_retriever';
         $this->tab = 'front_office_features';
         $this->version = '1.0.0';
         $this->author = 'aeyoll';
@@ -29,8 +29,8 @@ class Image_Retriever extends Module
 
         parent::__construct();
 
-        $this->displayName = $this->trans('Image Retriver', [], 'Modules.ImageRetriever.Admin');
-        $this->description = $this->trans('Image Retriver for PrestaShop', [], 'Modules.ImageRetriever.Admin');
+        $this->displayName = $this->trans('Image retriever', [], 'Modules.ImageRetriever.Admin');
+        $this->description = $this->trans('Image retriever for PrestaShop', [], 'Modules.ImageRetriever.Admin');
 
         $this->ps_versions_compliancy = ['min' => '8.1.0.0', 'max' => _PS_VERSION_];
 
