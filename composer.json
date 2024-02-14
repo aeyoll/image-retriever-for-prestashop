@@ -8,14 +8,9 @@
   "autoload": {
     "psr-4": {
       "PrestaShop\\Module\\ImageRetriever\\": "src/"
-    },
-    "exclude-from-classmap": []
+    }
   },
-  "config": {
-    "preferred-install": "dist",
-    "prepend-autoloader": false
-  },
-  "type": "prestashop-module",
+  "type": "library",
   "authors": [{
     "name": "Jean-Philippe Bidegain"
   }]
