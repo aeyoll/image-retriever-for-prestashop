@@ -42,7 +42,7 @@ class ImageRetrieverService
             ]
         );
 
-        $imageFolderUrl = str_replace(_PS_ROOT_DIR_, '', $imageFolderPath);
+        $imageFolderUrl = ltrim(str_replace(_PS_ROOT_DIR_, '', $imageFolderPath), '/');
 
         $isMultipleImageFormatFeatureActive = FeatureFlag::isEnabled(FeatureFlagSettings::FEATURE_FLAG_MULTIPLE_IMAGE_FORMAT);
 
