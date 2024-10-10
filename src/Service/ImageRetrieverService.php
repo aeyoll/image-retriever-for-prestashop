@@ -44,12 +44,13 @@ class ImageRetrieverService
 
         $imageFolderUrl = ltrim(str_replace(_PS_ROOT_DIR_, '', $imageFolderPath), '/');
 
-        $isMultipleImageFormatFeatureActive = FeatureFlag::isEnabled(FeatureFlagSettings::FEATURE_FLAG_MULTIPLE_IMAGE_FORMAT);
+        $configuredImageFormats = ['jpg'];
+        if (class_exists('FeatureFlag')) {
+            $isMultipleImageFormatFeatureActive = FeatureFlag::isEnabled(FeatureFlagSettings::FEATURE_FLAG_MULTIPLE_IMAGE_FORMAT);
 
-        if ($isMultipleImageFormatFeatureActive) {
-            $configuredImageFormats = explode(',', Configuration::get('PS_IMAGE_FORMAT'));
-        } else {
-            $configuredImageFormats = ['jpg'];
+            if ($isMultipleImageFormatFeatureActive) {
+                $configuredImageFormats = explode(',', Configuration::get('PS_IMAGE_FORMAT'));
+            }
         }
 
         $rewrite = $idImage;
