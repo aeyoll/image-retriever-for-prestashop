@@ -22,7 +22,7 @@ class ImageRetrieverService
      *
      * @throws PrestaShopDatabaseException
      */
-    public function getImage(string $imageFolderPath, int|string $idImage, array $onlyTypes = []): array
+    public function getImage(string $imageFolderPath, $idImage, array $onlyTypes = []): array
     {
         $urls = [];
 
@@ -121,7 +121,7 @@ class ImageRetrieverService
      *
      * @return void
      */
-    private function checkOrGenerateImageType(string $originalImagePath, string $imageFolderPath, int|string $idImage, array $imageTypeData, string $imageFormat): void
+    private function checkOrGenerateImageType(string $originalImagePath, string $imageFolderPath, $idImage, array $imageTypeData, string $imageFormat): void
     {
         $fileName = sprintf('%s-%s.%s', $idImage, $imageTypeData['name'], $imageFormat);
         $resizedImagePath = implode(
